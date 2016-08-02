@@ -5,17 +5,11 @@ import com.sample.bean.ValyrianPeeler;
 import com.sample.factory.PeelerFactory;
 import com.sample.service.Peeler;
 
-public class PeelerFactoryTest {
-
-	static String colorGreen = "green";
-	static String colorRed = "red";
-	static String colorBlue = "blue";
-	static String colorPurple = "purple";
+public class PeelerFactoryTest extends TestSetup {
 
 	public static void main(String args[]) {
 		testFactoryPos(colorGreen);
 		testFactoryPos1(colorBlue);
-
 		testFactoryNeg(colorPurple);
 
 	}

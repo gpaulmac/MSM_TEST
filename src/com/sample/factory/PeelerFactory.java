@@ -7,10 +7,10 @@ import com.sample.service.Peeler;
 public class PeelerFactory {
 
 	public static Peeler getPeeler(String color) {
-		if (color.equalsIgnoreCase("blue"))
+		if (color.equalsIgnoreCase(FactoryConstant.BLUE))
 			return new ValyrianPeeler();
-		else if (color.equalsIgnoreCase("green")
-				|| color.equalsIgnoreCase("red"))
+		else if (color.equalsIgnoreCase(FactoryConstant.GREEN)
+				|| color.equalsIgnoreCase(FactoryConstant.RED))
 			return new CustomPeeler();
 		return null;
 	}

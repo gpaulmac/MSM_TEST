@@ -8,9 +8,20 @@ public class Apple {
 
 	public Apple(String color, int taste, boolean hasWorm, int weight) {
 		this.color = color;
-		this.taste = taste;
+		if (taste == 1 || taste == 2 || taste == 3 || taste == 4) {
+			this.taste = taste;
+		} else {
+			throw new IllegalArgumentException();
+		}
+
+		// this.taste = taste;
 		this.hasWorm = hasWorm;
-		this.weight = weight;
+		if (weight > 10 && weight < 100) {
+			this.weight = weight;
+		} else {
+			throw new IllegalArgumentException();
+		}
+
 	}
 
 	public String getColor() {
@@ -26,7 +37,11 @@ public class Apple {
 	}
 
 	public void setTaste(int taste) {
-		this.taste = taste;
+		if (taste == 1 || taste == 2 || taste == 3 || taste == 4) {
+			this.taste = taste;
+		} else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	public boolean hasWorm() {
@@ -42,7 +57,11 @@ public class Apple {
 	}
 
 	public void setWeight(int weight) {
-		this.weight = weight;
+		if (weight > 10 && weight < 100) {
+			this.weight = weight;
+		} else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	public String toString() {

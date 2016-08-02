@@ -3,16 +3,62 @@ package com.sample.test;
 import com.sample.bean.Apple;
 import com.sample.util.PeelerUtil;
 
-public class AppleTest {
-	static Apple canEat = new Apple("green", 4, false, 20);
-	static Apple cantEat = new Apple("green", 2, false, 20);
-	static Apple cantEat2 = new Apple("green", 4, true, 20);
+public class AppleTest extends TestSetup {
 
 	public static void main(String args[]) {
+		testIsAppleValidWeightPos();
+		testIsAppleValidWeightNeg();
+
+		testAppleValidTastePos();
+		testAppleValidTasteNeg();
+
+		// testIsAppleValidColorPos(appleValidColor);
+		// testIsAppleValidColorNeg(appleInValidColor);
+
 		testAppleEatPos(canEat);
 		testAppleEatNeg(cantEat);
 		testAppleEatNeg(cantEat2);
 
+	}
+
+	private static void testAppleValidTasteNeg() {
+		try {
+			Apple appleInValidTaste = new Apple("green", 5, true, 23);
+			System.out.println("FAILED >> testAppleValidTasteNeg >>  "
+					+ appleInValidTaste.getTaste());
+		} catch (IllegalArgumentException e) {
+			System.out.println("SUCESS >> testAppleValidTasteNeg >>  ");
+		}
+	}
+
+	private static void testAppleValidTastePos() {
+		try {
+			Apple appleValidTaste = new Apple("green", 4, true, 20);
+			System.out.println("SUCESS >> testAppleValidTastePos >>  "
+					+ appleValidTaste.getTaste());
+		} catch (IllegalArgumentException e) {
+			System.out.println("FAILED >> testAppleValidTastePos >> ");
+		}
+	}
+
+	private static void testIsAppleValidWeightNeg() {
+		try {
+			Apple appleInValidTaste = new Apple("green", 3, true, 120);
+			System.out.println("FAILED >> testIsAppleValidWeightNeg >>  "
+					+ appleInValidTaste.getWeight());
+		} catch (IllegalArgumentException e) {
+			System.out.println("SUCESS >> testAppleValidTasteNeg >>  ");
+		}
+	}
+
+	private static void testIsAppleValidWeightPos() {
+		try {
+			Apple appleValidTaste = new Apple("green", 4, true, 20);
+			System.out.println("SUCESS >> testIsAppleValidWeightPos >>  "
+					+ appleValidTaste.getWeight());
+		} catch (IllegalArgumentException e) {
+			System.out.println("FAILED >> testIsAppleValidWeightPos >> ");
+		}
 	}
 
 	private static void testAppleEatNeg(Apple apple) {
