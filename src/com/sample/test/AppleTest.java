@@ -12,6 +12,10 @@ public class AppleTest extends TestSetup {
 		testAppleValidTastePos();
 		testAppleValidTasteNeg();
 
+		testAppleValidColorPos();
+		testAppleValidColorNeg();
+
+		
 		// testIsAppleValidColorPos(appleValidColor);
 		// testIsAppleValidColorNeg(appleInValidColor);
 
@@ -38,6 +42,26 @@ public class AppleTest extends TestSetup {
 					+ appleValidTaste.getTaste());
 		} catch (IllegalArgumentException e) {
 			System.out.println("FAILED >> testAppleValidTastePos >> ");
+		}
+	}
+	
+	private static void testAppleValidColorNeg() {
+		try {
+			Apple appleInValidTaste = new Apple("purple", 5, true, 23);
+			System.out.println("FAILED >> testAppleValidColorNeg >>  "
+					+ appleInValidTaste.getTaste());
+		} catch (IllegalArgumentException e) {
+			System.out.println("SUCESS >> testAppleValidColorNeg >>  ");
+		}
+	}
+
+	private static void testAppleValidColorPos() {
+		try {
+			Apple appleValidTaste = new Apple("green", 4, true, 20);
+			System.out.println("SUCESS >> testAppleValidColorPos >>  "
+					+ appleValidTaste.getColor());
+		} catch (IllegalArgumentException e) {
+			System.out.println("FAILED >> testAppleValidColorPos >> ");
 		}
 	}
 

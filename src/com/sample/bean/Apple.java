@@ -7,7 +7,13 @@ public class Apple {
 	private int weight;
 
 	public Apple(String color, int taste, boolean hasWorm, int weight) {
-		this.color = color;
+		if (color.equalsIgnoreCase("green") || color.equalsIgnoreCase("red")
+				|| color.equalsIgnoreCase("blue")) {
+			this.color = color;
+		} else {
+			throw new IllegalArgumentException();
+		}
+
 		if (taste == 1 || taste == 2 || taste == 3 || taste == 4) {
 			this.taste = taste;
 		} else {
@@ -29,7 +35,12 @@ public class Apple {
 	}
 
 	public void setColor(String color) {
-		this.color = color;
+		if (color.equalsIgnoreCase("green") || color.equalsIgnoreCase("red")
+				|| color.equalsIgnoreCase("blue")) {
+			this.color = color;
+		} else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	public int getTaste() {
