@@ -20,7 +20,7 @@ public class AppleTest{
 		if(PeelerUtil.canPeel(apple)){
 		System.out.println("FAILED >> testAppleEatNeg >>  "+apple.toString());
 		}else{
-		System.out.println(" SUCCESS >> testAppleEatNeg >>  "+apple.toString());	
+		System.out.println("SUCCESS >> testAppleEatNeg >>  "+apple.toString());	
 		}
 		
 	}
